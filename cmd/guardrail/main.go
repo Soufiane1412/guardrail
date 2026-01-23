@@ -1,21 +1,21 @@
 package main
 
-
 import (
-
 	"fmt"
+	"guardrail/internal"
+	"log"
 
+	"guardrail/internal"
 )
 
 func main() {
 
-	fmt.Println("-------------------------------------------")
-	fmt.Println("🛡️  PLATFORM GUARDRAIL: SYSTEM INITIALIZED")
-	fmt.Println("-------------------------------------------")
-	fmt.Println("Status: Active")
-	fmt.Println("Goal: CTO Path - 90 Day Sprint")
-	fmt.Println("Focus: Infrastructure Logic in Go")
-	fmt.Println("-------------------------------------------")
+	fmt.Println("🛡️ Guardrail Engine Starting...")
 
+	// Path to the file Teraform created
+	err := internal.CheckPolicy("terraform/policy_report.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 }
